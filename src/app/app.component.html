@@ -1,44 +1,44 @@
 <h1 class="center">Pokemons List</h1>
+
 <input
     type="number"
     (click)="selectPokemon($event)"
 />
 <input
     #input
-    (keyup)="0"    
+    (keyup)="0"
     type="text"
 />
 <input
     #index
-    (keyup.enter)="selectPokemon2(index.value)"    
+    (keyup.enter)="selectPokemon2(index.value)"
     type="number"
 />
 <p>{{ input.value }}</p>
 
 @if (pokemonSelected) {
-    <p>You select the pokemon {{ pokemonSelected?.name}}</p>
+    <p>You selected the pokemon {{ pokemonSelected?.name }}</p>
 }
 @if (!pokemonSelected) {
-    <p>The pokemon not exist</p>
+    <p>The pokemon does not exist</p>
 }
 
 <div class="container">
-    <div class="row">
-        @for (pokemon of pokemonList; track pokemon.name) {
-            <div class="col m4 s6">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img [src]="pokemon.picture"/>
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>{{ pokemon.name }}</p>
-                            <p><small>{{ pokemon.created }}</small></p>
-                        </div>
-                    </div>
-                </div>
+  <div class="row">
+    @for (pokemon of pokemonList; track pokemon.name) {
+      <div class="col m4 s6">
+        <div class="card horizontal" pokemonBorderCard>
+          <div class="card-image">
+            <img [src]="pokemon.picture" />
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>{{ pokemon.name }}</p>
+              <p><small>{{ pokemon.created }}</small></p>
             </div>
-        }
-    </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
 </div>
-

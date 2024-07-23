@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
+import { BorderCardDirective } from './border-card.directive';
 
 @Component({              // Permet de construire un composant web
   selector: 'app-root',   // Permet de donner un nom au composant afin de l'identifier
   standalone: true,
   // Permet de definir le contenu html du composant
   templateUrl: 'app.component.html',
+  imports: [BorderCardDirective],
   styles: [],
 })
 
