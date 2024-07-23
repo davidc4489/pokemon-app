@@ -1,0 +1,27 @@
+<h1>Pokemons List</h1>
+<input
+    type="number"
+    (click)="selectPokemon($event)"
+/>
+<input
+    #input
+    (keyup)="0"    
+    type="text"
+/>
+<input
+    #index
+    (keyup.enter)="selectPokemon2(index.value)"    
+    type="number"
+/>
+<p>{{ input.value }}</p>
+
+@if (pokemonSelected) {
+    <p>You select the pokemon {{ pokemonSelected?.name}}</p>
+}
+@if (!pokemonSelected) {
+    <p>The pokemon not exist</p>
+}
+
+@for (pokemon of pokemonList; track pokemon.name) {
+    <p>{{ pokemon.name }}</p>
+}
