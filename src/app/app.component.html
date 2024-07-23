@@ -1,4 +1,4 @@
-<h1>Pokemons List</h1>
+<h1 class="center">Pokemons List</h1>
 <input
     type="number"
     (click)="selectPokemon($event)"
@@ -22,6 +22,23 @@
     <p>The pokemon not exist</p>
 }
 
-@for (pokemon of pokemonList; track pokemon.name) {
-    <p>{{ pokemon.name }}</p>
-}
+<div class="container">
+    <div class="row">
+        @for (pokemon of pokemonList; track pokemon.name) {
+            <div class="col m4 s6">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img [src]="pokemon.picture"/>
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>{{ pokemon.name }}</p>
+                            <p><small>{{ pokemon.created }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
