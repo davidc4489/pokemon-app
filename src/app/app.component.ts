@@ -11,7 +11,7 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
   // Permet de definir le contenu html du composant
   templateUrl: 'app.component.html',
   imports: [BorderCardDirective, CommonModule, PokemonTypeColorPipe],
-  styles: [],
+  styles: []
 })
 
 export class AppComponent implements OnInit {
